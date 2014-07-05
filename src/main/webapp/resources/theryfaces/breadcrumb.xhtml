@@ -1,0 +1,20 @@
+<ui:component
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:cc="http://java.sun.com/jsf/composite">
+    
+    <cc:interface>
+        <!-- Define component attributes here -->
+        <cc:attribute name="separator" type="java.lang.String" required="false" default=">"/>
+    </cc:interface>
+    <cc:implementation>
+        <!-- Define component body here -->
+        <ui:repeat var="child" value="#{cc.children}" varStatus="status">
+        	#{child.encodeAll(facesContext)}
+        	<h:outputText value="#{cc.attrs.separator}" rendered="#{!status.last}" />
+        </ui:repeat>
+    </cc:implementation>
+    
+</ui:component>

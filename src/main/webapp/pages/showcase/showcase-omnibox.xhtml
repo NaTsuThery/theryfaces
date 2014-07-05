@@ -1,0 +1,14 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:tf="http://java.sun.com/jsf/composite/theryfaces">
+
+	<h:form prependId="false">
+		<!-- Omnibox -->
+		<tf:omnibox fullList="#{omniboxController.colorList}"
+			filteredList="#{omniboxController.selectedColors}"
+			update="outputList" />
+		<!-- Results display -->
+		<h:outputText id="outputList" value="#{omniboxController.selectedColors}" />
+	</h:form>
+</ui:composition>

@@ -1,0 +1,16 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:tf="http://java.sun.com/jsf/composite/theryfaces">
+
+	<h:form>
+		<tf:inputDate value="#{inputDateController.firstDate}" />
+		<br />
+		<tf:inputDate value="#{inputDateController.secondDate}" maxyear="2050" />
+		<br />
+		<tf:inputDate value="#{inputDateController.thirdDate}" maxyear="2000"
+			minyear="1990" />
+		<br />
+		<h:commandButton value="Submit" action="#{inputDateController.submit}" />
+	</h:form>
+</ui:composition>

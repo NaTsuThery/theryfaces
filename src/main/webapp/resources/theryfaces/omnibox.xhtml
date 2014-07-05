@@ -1,0 +1,22 @@
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:cc="http://java.sun.com/jsf/composite">
+
+	<cc:interface componentType="omnibox">
+		<!-- Define component attributes here -->
+		<cc:attribute name="fullList" type="java.util.List" required="true" />
+		<cc:attribute name="filteredList" type="java.util.List" required="true" />
+		<cc:attribute name="update" type="java.lang.String" required="true" />
+	</cc:interface>
+	<cc:implementation>
+		<span id="#{cc.clientId}"> <h:inputText value="#{cc.value}"
+				styleClass="tf-component tf-omnibox">
+				<f:ajax event="keyup" listener="#{cc.searchKeyUpEvent}"
+					render="#{cc.update}" />
+			</h:inputText>
+		</span>
+	</cc:implementation>
+
+</ui:component>
