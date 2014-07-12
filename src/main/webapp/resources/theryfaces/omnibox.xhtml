@@ -14,7 +14,7 @@
 		<span id="#{cc.clientId}"> <h:inputText value="#{cc.value}"
 				styleClass="tf-component tf-omnibox">
 				<f:ajax event="keyup" listener="#{cc.searchKeyUpEvent}"
-					render="#{cc.update}" />
+					render="#{cc.attrs.update}" />
 			</h:inputText>
 		</span>
 	</cc:implementation>

@@ -14,6 +14,12 @@ import lombok.Setter;
 
 import org.apache.commons.collections4.CollectionUtils;
 
+/**
+ * JSF Omnibox component.
+ * 
+ * @author Thery
+ *
+ */
 @FacesComponent("omnibox")
 public class Omnibox extends UIInput implements NamingContainer {
 
@@ -21,16 +27,6 @@ public class Omnibox extends UIInput implements NamingContainer {
   @Getter
   @Setter
   private String value;
-
-  /** The list to filter with {@code value}. */
-  @Getter
-  @Setter
-  private List<Object> listToFilter;
-
-  /** The component to update after the search action. */
-  @Getter
-  @Setter
-  private String update;
 
   /**
    * Returns the component family of {@link UINamingContainer}. (that's just required by composite
@@ -42,7 +38,7 @@ public class Omnibox extends UIInput implements NamingContainer {
   }
 
   /**
-   * Search element in {@code listToFilter} which match with {@code value}.
+   * Search element in {@code fullList} which match with {@code value}.
    */
   @SuppressWarnings("unchecked")
   public void searchKeyUpEvent(AjaxBehaviorEvent event) {

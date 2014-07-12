@@ -4,6 +4,35 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 	<display-name>theryfaces</display-name>
+
+	<!-- All context-param are set by default in the class com.sun.faces.config.WebConfiguration 
+		(for Mojarra only) -->
+	<!-- Automatic reload of xhtml files, default value is "Production" -->
+	<context-param>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Development</param-value>
+	</context-param>
+
+	<!-- Skip comment -->
+	<context-param>
+		<param-name>facelets.SKIP_COMMENTS</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<!-- Change separator, the default was ':' but it causes some problems in 
+		javascript & jQuery -->
+	<context-param>
+		<param-name>javax.faces.SEPARATOR_CHAR</param-name>
+		<param-value>-</param-value>
+	</context-param>
+
+	<!-- Set timezone to system's timezone -->
+	<context-param>
+		<param-name>javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<!-- JSF Servlet -->
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -14,9 +43,27 @@
 		<url-pattern>/faces/*</url-pattern>
 	</servlet-mapping>
 
-	<!-- Ignore comments -->
-	<context-param>
-		<param-name>facelets.SKIP_COMMENTS</param-name>
-		<param-value>true</param-value>
-	</context-param>
+	<!-- Set UTF-8 Encoding (the encode setting can be set to ISO-8859-1 if 
+		needed) -->
+	<filter>
+		<filter-name>characterEncodingFilter</filter-name>
+		<filter-class>org.omnifaces.filter.CharacterEncodingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>characterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- Session timeout -->
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+
+	<!-- Welcome file -->
+	<welcome-file-list>
+		<welcome-file>faces/pages/showcase/showcase.xhtml</welcome-file>
+	</welcome-file-list>
+
+	<!-- Error management (TO BE DEFINED) <error-page> <error-code>403</error-code> 
+		<location>/faces/403error.xhtml</location> </error-page> -->
 </web-app>

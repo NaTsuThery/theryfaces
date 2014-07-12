@@ -4,4 +4,32 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
 	version="2.2">
 
+	<!-- The ResetInputAjaxActionListener component will reset input fields 
+		which are not executed during ajax submit, but which are rendered/updated 
+		during ajax response. -->
+	<lifecycle>
+		<phase-listener>org.omnifaces.eventlistener.ResetInputAjaxActionListener</phase-listener>
+	</lifecycle>
+
+	<!-- This exception handler will redirect errors to error pages defined 
+		in the web.xml file. You can also implement your own exception handler factory 
+		(i.e. CustomExceptionHandler extends ExceptionHandlerWrapper && CustomExceptionHandlerFactory 
+		extends ExceptionHandlerFactory). -->
+	<factory>
+		<exception-handler-factory>org.omnifaces.exceptionhandler.FullAjaxExceptionHandlerFactory</exception-handler-factory>
+	</factory>
+
+	<application>
+		<locale-config>
+			<default-locale>fr</default-locale>
+		</locale-config>
+		<!-- I18N Messages externalization -->
+		<resource-bundle>
+			<base-name>i18n.messages</base-name>
+			<var>msg</var>
+		</resource-bundle>
+		<!-- Message Bundle is used to override JSF default messages -->
+		<message-bundle>i18n.error-messages.properties</message-bundle>
+	</application>
+
 </faces-config>

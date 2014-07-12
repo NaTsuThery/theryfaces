@@ -64,3 +64,4 @@ rebel.xml
 build.xml
 
 logs/*
+/target/

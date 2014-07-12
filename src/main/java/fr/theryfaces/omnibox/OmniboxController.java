@@ -10,18 +10,29 @@ import javax.faces.bean.ViewScoped;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Omnibox Controller.
+ * 
+ * @author Thery
+ *
+ */
 @ManagedBean
 @ViewScoped
 public class OmniboxController {
 
+  /** List of all colors. */
   @Getter
   @Setter
   private List<String> colorList;
 
+  /** List of all selected colors. */
   @Getter
   @Setter
   private List<String> selectedColors;
 
+  /**
+   * Initialize color list.
+   */
   @PostConstruct
   public void init() {
     selectedColors = new ArrayList<String>();
