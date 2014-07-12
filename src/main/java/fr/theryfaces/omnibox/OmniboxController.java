@@ -1,5 +1,6 @@
 package fr.theryfaces.omnibox;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,13 +13,16 @@ import lombok.Setter;
 
 /**
  * Omnibox Controller.
- * 
+ *
  * @author Thery
  *
  */
 @ManagedBean
 @ViewScoped
-public class OmniboxController {
+public class OmniboxController implements Serializable {
+
+  /** Serial version. */
+  private static final long serialVersionUID = -5636830240834421805L;
 
   /** List of all colors. */
   @Getter

@@ -1,0 +1,23 @@
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:cc="http://java.sun.com/jsf/composite"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+	<cc:interface>
+		<cc:attribute name="stickerId" type="java.lang.String" required="true" />
+		<cc:attribute name="targetId" type="java.lang.String" required="true"
+			default="window" />
+	</cc:interface>
+	<cc:implementation>
+		<h:outputStylesheet library="css" name="stickyHeader.css" />
+		<h:outputScript library="js" name="stickyHeader.js" target="head" />
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("##{cc.attrs.stickerId}").stickyHeader("#{cc.attrs.targetId}");
+			});
+		</script>
+	</cc:implementation>
+</ui:component>
