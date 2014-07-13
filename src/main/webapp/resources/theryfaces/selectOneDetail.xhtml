@@ -1,0 +1,44 @@
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:cc="http://java.sun.com/jsf/composite"
+	xmlns:tf="http://java.sun.com/jsf/composite/theryfaces">
+
+	<cc:interface>
+		<!-- Element list to browse -->
+		<cc:attribute name="fullList" type="java.util.List" required="true" />
+		<cc:attribute name="filteredList" type="java.util.List" required="true" />
+		<cc:attribute name="selectedItem"
+			type="fr.theryfaces.selectonedetail.ItemDetail" required="true" />
+	</cc:interface>
+	<cc:implementation>
+		<!-- Omnibox to filter the list -->
+		<tf:omnibox fullList="#{cc.attrs.fullList}"
+			filteredList="#{cc.attrs.filteredList}"
+			update="#{cc.clientId}-displayList" /> 
+			
+		<!-- Display list --> 
+		<h:selectOneMenu id="displayList"
+			value="#{cc.attrs.selectedItem}" converter="omnifaces.SelectItemsConverter">
+			<f:ajax event="change" execute="@this" render="detailTable" />
+			<f:selectItem itemLabel=" " noSelectionOption="true" />
+			<f:selectItems value="#{cc.attrs.filteredList}" var="item"
+				itemLabel="#{item.label}" itemValue="#{item}" />
+		</h:selectOneMenu> <br /> 
+		
+		<!-- Display detail of the selected item --> 
+		<h:dataTable
+			id="detailTable"
+			value="#{cc.attrs.selectedItem.detailMap.entrySet().toArray()}"
+			var="entry">
+			<h:column>
+				<h:outputText value="#{entry.key}" />
+			</h:column>
+			<h:column>
+				<h:outputText value="#{entry.value}" />
+			</h:column>
+		</h:dataTable>
+	</cc:implementation>
+
+</ui:component>

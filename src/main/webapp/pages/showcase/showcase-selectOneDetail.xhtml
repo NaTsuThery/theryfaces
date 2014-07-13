@@ -1,0 +1,12 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:tf="http://java.sun.com/jsf/composite/theryfaces">
+
+	<h:form prependId="false">
+		<!-- SelectOneDetail -->
+		<tf:selectOneDetail fullList="#{selectOneDetailController.playerList}"
+			filteredList="#{selectOneDetailController.playerFilteredList}"
+			selectedItem="#{selectOneDetailController.selectedPlayer}" />
+	</h:form>
+</ui:composition>

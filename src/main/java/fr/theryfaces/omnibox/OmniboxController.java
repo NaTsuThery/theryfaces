@@ -39,8 +39,8 @@ public class OmniboxController implements Serializable {
    */
   @PostConstruct
   public void init() {
-    selectedColors = new ArrayList<String>();
-    colorList = new ArrayList<String>();
+    selectedColors = new ArrayList<>();
+    colorList = new ArrayList<>();
     colorList.add("Red");
     colorList.add("Yellow");
     colorList.add("Orange");
