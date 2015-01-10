@@ -29,7 +29,7 @@
 			<var>msg</var>
 		</resource-bundle>
 		<!-- Message Bundle is used to override JSF default messages -->
-		<message-bundle>i18n.error-messages.properties</message-bundle>
+		<message-bundle>i18n.error-messages</message-bundle>
 	</application>
 
 </faces-config>
