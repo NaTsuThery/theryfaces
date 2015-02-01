@@ -3,6 +3,8 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:tf="http://java.sun.com/jsf/composite/theryfaces">
 
+	<h:outputText value="#{msg['component.selectOneDetail']}"
+		styleClass="section-title" />
 	<h:form prependId="false">
 		<!-- SelectOneDetail -->
 		<tf:selectOneDetail fullList="#{selectOneDetailController.playerList}"

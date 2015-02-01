@@ -1,8 +1,13 @@
 @CHARSET "UTF-8";
 
 * {
-	font-family: Verdana, Arial, sans-serif;
+	font-family: Verdana, Georgia, Serif;
 	font-size: 1em;
+}
+
+body {
+	margin-left: 7.5%;
+	margin-right: 7.5%;
 }
 
 .h1000 {
@@ -14,4 +19,16 @@
 	width: 500px;
 	height: 200px;
 	overflow: auto;
+}
+
+.title {
+	font-size: 16px;
+	line-height: 30px;
+	color: #999;
+	font-style: italic;
+	letter-spacing: 2px;
+}
+
+.section-title {
+	font-size: 12px;
 }

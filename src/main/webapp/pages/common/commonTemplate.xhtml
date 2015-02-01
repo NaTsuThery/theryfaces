@@ -19,15 +19,14 @@ xmlns:p="http://primefaces.org/ui" -->
 	<meta http-equiv="cache-control" content="no-cache" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<h:outputScript library="js" name="jquery-2.1.1.js" />
-</h:head>
-<h:body>
-	<!-- Include CSS when you're using primefaces, your CSS will be included at the end -->
 	<h:outputStylesheet library="css" name="style.css" />
+</h:head>
 
+<h:body>
 	<!-- Define header -->
 	<div id="header">
 		<ui:insert name="header">
-			<h:outputText value="#{msg['header.txt']}" />
+			<!-- <h:outputText value="#{msg['header.txt']}" /> -->
 		</ui:insert>
 	</div>
 
@@ -39,7 +38,7 @@ xmlns:p="http://primefaces.org/ui" -->
 	<!-- Define footer -->
 	<div id="footer">
 		<ui:insert name="footer">
-			<h:outputText value="#{msg['footer.txt']}" />
+			<!-- <h:outputText value="#{msg['footer.txt']}" /> -->
 		</ui:insert>
 	</div>
 </h:body>

@@ -3,12 +3,15 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:tf="http://java.sun.com/jsf/composite/theryfaces">
 
+	<h:outputText value="#{msg['component.omnibox']}"
+		styleClass="section-title" />
 	<h:form prependId="false">
 		<!-- Omnibox -->
 		<tf:omnibox fullList="#{omniboxController.colorList}"
 			filteredList="#{omniboxController.selectedColors}"
 			update="outputList" />
 		<!-- Results display -->
-		<h:outputText id="outputList" value="#{omniboxController.selectedColors}" />
+		<h:outputText id="outputList"
+			value="#{omniboxController.selectedColors}" />
 	</h:form>
 </ui:composition>

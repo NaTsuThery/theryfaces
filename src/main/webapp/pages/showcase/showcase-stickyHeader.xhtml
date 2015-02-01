@@ -4,19 +4,10 @@
 	xmlns:tf="http://java.sun.com/jsf/composite/theryfaces">
 
 	<div id="sticker">
-		<h:outputText value="#{msg['theryfaces.showcase.title']}" />
+		<h:outputText value="#{msg['component.stickyHeader']}"
+			styleClass="section-title" />
 	</div>
-
-	<div id="targetDiv" class="absolute-container">
-		<div id="stickerInsideDiv">
-			<h:outputText value="#{msg['theryfaces.showcase.title']}" />
-		</div>
-		<div class="h1000" />
-	</div>
-
-	<div class="h1000" />
 
 	<tf:stickyHeader stickerId="sticker" targetId="window" />
-	<tf:stickyHeader stickerId="stickerInsideDiv" targetId="targetDiv" />
 
 </ui:composition>
