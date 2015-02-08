@@ -10,6 +10,7 @@ Composite Components :
 * Omnibox (Inputtext filter)
 * StickyHeader (StickyHeader using jQuery, it works in full page or inside a div)
 * SelectOneDetail (Omnibox + selectOneMenu + Detail of the selected item)
+* Box (Sample box with beveled corner, Usefull if repeated N times)
 
 Utility (functions e.g. #{util:someFunction('parameter')}) :
 * Enum list

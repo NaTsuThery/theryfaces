@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+.box {
+	position: relative;
+	border: 1px solid silver;
+	background-image: url("#{resource['images:worldmap.png']}");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.box:hover {
+	opacity: 0.8;
+}
+
+.box:before {
+	content: '';
+	position: absolute;
+	right: -1px;
+	bottom: -1px;
+	border-left: 40px solid transparent;
+	border-bottom: 40px solid silver;
+}
+
+.box:after {
+	content: '';
+	position: absolute;
+	right: -2px;
+	bottom: -2px;
+	content: '';
+	border-top: 40px solid transparent;
+	border-right: 40px solid white;
+}

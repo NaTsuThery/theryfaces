@@ -1,0 +1,33 @@
+<ui:component xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:cc="http://java.sun.com/jsf/composite">
+
+	<cc:interface>
+		<!-- Define component attributes here -->
+		<cc:attribute name="width" type="java.lang.Integer" required="false" default="200" />
+		<cc:attribute name="height" type="java.lang.Integer" required="false" default="100" />
+		<cc:attribute name="title" type="java.lang.String" required="false" default="Anonymous box!" />
+	</cc:interface>
+
+	<cc:implementation>
+		<!-- Custom Box CSS, the include will be in the head tag -->
+		<h:outputStylesheet library="css" name="box.css" />
+		<!-- Box -->
+		<div class="box" style="height:#{cc.attrs.height}px; width:#{cc.attrs.width}px">
+
+			<!-- Title -->
+			<div class="box-title">
+				<h:outputText value="#{cc.attrs.title}" />
+			</div>
+
+			<!-- Content -->
+			<div class="box-content">
+				<ui:repeat var="child" value="#{cc.children}">
+        			#{child.encodeAll(facesContext)}
+				</ui:repeat>
+			</div>
+		</div>
+
+	</cc:implementation>
+
+</ui:component>
