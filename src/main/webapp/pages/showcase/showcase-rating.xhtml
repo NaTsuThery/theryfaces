@@ -1,11 +1,13 @@
-<ui:composition 
-    xmlns="http://www.w3.org/1999/xhtml" 
-    xmlns:ui="http://java.sun.com/jsf/facelets"
-    xmlns:h="http://java.sun.com/jsf/html" 
-    xmlns:tf="http://java.sun.com/jsf/composite/theryfaces">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:tf="http://java.sun.com/jsf/composite/theryfaces">
 
-	<h:outputText value="#{msg['component.rating']}"
-		styleClass="section-title" />
-	<tf:rating score="60" />
+	<div class="item-title">
+		<h:outputText value="#{msg['component.rating']}" />
+	</div>
+	<div class="item-example">
+		<tf:rating score="60" />
+	</div>
 
 </ui:composition>

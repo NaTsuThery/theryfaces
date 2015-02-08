@@ -3,8 +3,17 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:tf="http://java.sun.com/jsf/composite/theryfaces">
 
-	<h:outputText value="#{msg['component.box']}"
-		styleClass="section-title" />
-	<tf:box width="350" height="200" title="#{msg['box.worldmap']}" />
-
+	<div class="item-title">
+		<h:outputText value="#{msg['component.box']}" />
+	</div>
+	<div class="item-example">
+		<div class="left margin-right">
+			<tf:box width="350" height="200" title="#{msg['box.worldmap']}" />
+		</div>
+		<div class="left margin-left">
+			<tf:box width="500" height="100" />
+		</div>
+		
+		<div class="clear-both" />
+	</div>
 </ui:composition>

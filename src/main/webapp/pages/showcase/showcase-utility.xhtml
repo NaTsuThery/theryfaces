@@ -5,12 +5,16 @@
 	xmlns:o="http://omnifaces.org/ui"
 	xmlns:util="http://theryfaces.com/utility">
 
-	<h:outputText value="#{msg['utility.enumList']}"
-		styleClass="section-title" />
-	<h:form>
-		<h:selectOneMenu>
-			<f:selectItems
-				value="#{util:getEnumList('fr.theryfaces.type.PositionType')}" />
-		</h:selectOneMenu>
-	</h:form>
+	<div class="item-title">
+		<h:outputText value="#{msg['utility.enumList']}" />
+	</div>
+
+	<div class="item-example">
+		<h:form>
+			<h:selectOneMenu>
+				<f:selectItems
+					value="#{util:getEnumList('fr.theryfaces.type.PositionType')}" />
+			</h:selectOneMenu>
+		</h:form>
+	</div>
 </ui:composition>

@@ -3,11 +3,12 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:tf="http://java.sun.com/jsf/composite/theryfaces">
 
-	<div id="sticker">
-		<h:outputText value="#{msg['component.stickyHeader']}"
-			styleClass="section-title" />
+	<div class="item-title">
+		<h:outputText value="#{msg['component.stickyHeader']}" />
 	</div>
 
-	<tf:stickyHeader stickerId="sticker" targetId="window" />
-
+	<div id="sticker" class="item-example">
+		<h:outputText value="#{msg['sticky']}" />
+		<tf:stickyHeader stickerId="sticker" targetId="window" />
+	</div>
 </ui:composition>

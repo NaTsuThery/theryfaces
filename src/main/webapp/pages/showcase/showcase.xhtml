@@ -5,39 +5,34 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 	<ui:define name="content">
-		<div>
-			<h:outputText value="#{msg['component']}" styleClass="title" />
+		<h:outputText value="#{msg['component']}" styleClass="title" />
 
-			<div>
-				<ui:include src="showcase-breadcrumb.xhtml" />
-			</div>
-			<div>
-				<ui:include src="showcase-rating.xhtml" />
-			</div>
-			<div>
-				<ui:include src="showcase-omnibox.xhtml" />
-			</div>
-			<div>
-				<ui:include src="showcase-selectOneDetail.xhtml" />
-			</div>
-			<div>
-				<ui:include src="showcase-stickyHeader.xhtml" />
-			</div>
-			<div>
-				<ui:include src="showcase-box.xhtml" />
-			</div>
+		<div class="item">
+			<ui:include src="showcase-breadcrumb.xhtml" />
+		</div>
+		<div class="item">
+			<ui:include src="showcase-rating.xhtml" />
+		</div>
+		<div class="item">
+			<ui:include src="showcase-omnibox.xhtml" />
+		</div>
+		<div class="item">
+			<ui:include src="showcase-selectOneDetail.xhtml" />
+		</div>
+		<div class="item">
+			<ui:include src="showcase-stickyHeader.xhtml" />
+		</div>
+		<div class="item">
+			<ui:include src="showcase-box.xhtml" />
 		</div>
 
-		<div>
-			<h:outputText value="#{msg['utility']}" styleClass="title" />
+		<h:outputText value="#{msg['utility']}" styleClass="title" />
 
-			<div>
-				<ui:include src="showcase-utility.xhtml" />
-			</div>
+		<div class="item">
+			<ui:include src="showcase-utility.xhtml" />
 		</div>
-		
+
 		<!-- Used for stickyHeader demo -->
 		<div class="h1000" />
 	</ui:define>
-
 </ui:composition>

@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 
-<!-- Omnifaces :
-xmlns:o="http://omnifaces.org/ui"
-xmlns:of="http://omnifaces.org/functions"
-Primefaces :
-xmlns:p="http://primefaces.org/ui" -->
-
 <html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <ui:insert name="metadata" />
 <h:head>
-	<title><h:outputText
-			value="#{msg['showcase.title']}" /></title>
+	<title><h:outputText value="#{msg['showcase.title']}" /></title>
 	<meta http-equiv="expires" content="0" />
 	<meta http-equiv="pragma" content="no-cache" />
 	<meta http-equiv="cache-control" content="no-cache" />
@@ -23,23 +16,9 @@ xmlns:p="http://primefaces.org/ui" -->
 </h:head>
 
 <h:body>
-	<!-- Define header -->
-	<div id="header">
-		<ui:insert name="header">
-			<!-- <ui:include src="header.xhtml" /> -->
-		</ui:insert>
-	</div>
-
 	<!-- Define content -->
 	<div id="content">
 		<ui:insert name="content" />
-	</div>
-
-	<!-- Define footer -->
-	<div id="footer">
-		<ui:insert name="footer">
-			<!-- <h:outputText value="#{msg['footer.txt']}" /> -->
-		</ui:insert>
 	</div>
 </h:body>
 </html>

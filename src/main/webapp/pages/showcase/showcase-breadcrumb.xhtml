@@ -3,15 +3,17 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:tf="http://java.sun.com/jsf/composite/theryfaces">
 
-	<h:outputText value="#{msg['component.breadcrumb']}"
-		styleClass="section-title" />
-	<h:form>
-		<tf:breadcrumb>
-			<h:commandLink value="Text 1" />
-			<h:commandLink value="Text 2" />
-			<h:commandLink value="Text 3" />
-			<h:commandLink value="Text 4" />
-		</tf:breadcrumb>
-	</h:form>
-
+	<div class="item-title">
+		<h:outputText value="#{msg['component.breadcrumb']}" />
+	</div>
+	<div class="item-example">
+		<h:form>
+			<tf:breadcrumb>
+				<h:commandLink value="Text 1" />
+				<h:commandLink value="Text 2" />
+				<h:commandLink value="Text 3" />
+				<h:commandLink value="Text 4" />
+			</tf:breadcrumb>
+		</h:form>
+	</div>
 </ui:composition>

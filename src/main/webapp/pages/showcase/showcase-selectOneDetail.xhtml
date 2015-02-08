@@ -3,12 +3,17 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:tf="http://java.sun.com/jsf/composite/theryfaces">
 
-	<h:outputText value="#{msg['component.selectOneDetail']}"
-		styleClass="section-title" />
-	<h:form prependId="false">
-		<!-- SelectOneDetail -->
-		<tf:selectOneDetail fullList="#{selectOneDetailController.playerList}"
-			filteredList="#{selectOneDetailController.playerFilteredList}"
-			selectedItem="#{selectOneDetailController.selectedPlayer}" />
-	</h:form>
+	<div class="item-title">
+		<h:outputText value="#{msg['component.selectOneDetail']}" />
+	</div>
+
+	<div class="item-example">
+		<h:form prependId="false">
+			<!-- SelectOneDetail -->
+			<tf:selectOneDetail
+				fullList="#{selectOneDetailController.playerList}"
+				filteredList="#{selectOneDetailController.playerFilteredList}"
+				selectedItem="#{selectOneDetailController.selectedPlayer}" />
+		</h:form>
+	</div>
 </ui:composition>
